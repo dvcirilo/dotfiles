@@ -1,0 +1,8 @@
+[color]
+	ui = true
+[user]
+	name = Diego Vinicius
+	email = eletronzip@gmail.com
+[alias]
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
