@@ -134,7 +134,7 @@ function git_state {
             then
                 GIT_STATE=$GIT_STATE'+I' # Index has files staged for commit
             fi
-            if [[ "$STATUS" == *'Changed but not updated:'* ]]
+            if [[ "$STATUS" == *'Changed but not updated:'* || "$STATUS" == *'Changes not staged for commit'* ]]
             then
                 GIT_STATE=$GIT_STATE"+M" # Working tree has files modified but unstaged
             fi
