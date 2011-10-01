@@ -8,3 +8,7 @@ sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl 
 
 #necessary for web navigation
 sudo apt-get install flashplugin-installer ttf-mscorefonts-installer
+
+#necessary for akita's vimfiles.
+sudo apt-get install exuberant-ctags ncurses-term
+
