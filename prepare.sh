@@ -12,3 +12,6 @@ sudo apt-get install flashplugin-installer ttf-mscorefonts-installer
 #necessary for akita's vimfiles.
 sudo apt-get install exuberant-ctags ncurses-term
 
+#necessary for mysql db
+sudo apt-get install libmysqlclient-dev mysql-server mysql-client mysql-common
+
