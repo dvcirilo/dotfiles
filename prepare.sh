@@ -15,3 +15,8 @@ sudo apt-get install exuberant-ctags ncurses-term
 #necessary for mysql db
 sudo apt-get install libmysqlclient-dev mysql-server mysql-client mysql-common
 
+#audacious 2.5.0
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt-get update
+sudo apt-get install audacious
+
