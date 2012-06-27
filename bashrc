@@ -105,6 +105,9 @@ fi
 #My Scripts!
 export PATH=/home/diego/scripts:$PATH
 
+#TeX-Live
+export PATH=/usr/local/texlive/2011/bin/i386-linux:$PATH
+
 #RAILS
 #export PATH=/var/lib/gems/1.8/bin:$PATH
 
