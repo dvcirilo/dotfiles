@@ -106,11 +106,11 @@ fi
 export PATH=/home/diego/scripts:$PATH
 
 #RAILS
-export PATH=/var/lib/gems/1.8/bin:$PATH
+#export PATH=/var/lib/gems/1.8/bin:$PATH
 
 #RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-[[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion" # This adds rvm shell completion
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+#[[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion" # This adds rvm shell completion
 
 #GIT
 function git_state {
@@ -176,5 +176,6 @@ CYAN="\[\033[0;36m\]"
 LIGHT_CYAN="\[\033[1;36m\]"
 NO_COLOUR="\[\033[0m\]"
 
-export PS1="$PS1$CYAN\$(rvm_info)$BLUE\$(get_author)$YELLOW\$(parse_git_branch)$RED\$(git_state)$WHITE "
+#export PS1="$PS1$CYAN\$(rvm_info)$BLUE\$(get_author)$YELLOW\$(parse_git_branch)$RED\$(git_state)$WHITE "
+export PS1="$PS1$BLUE\$(get_author)$YELLOW\$(parse_git_branch)$RED\$(git_state)$WHITE "
 
