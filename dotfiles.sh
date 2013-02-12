@@ -7,6 +7,7 @@ wget "http://gravatar.com/avatar/4e2372887c285333cf7be7901de22bb3?s=200" -O .fac
 #ZSH config
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
 echo "source ~/.dotfiles/zshrc" > ~/.zshrc
+cp ~/.dotfiles/halan.zsh-theme ~/.oh-my-zsh/themes/
 
 #vim config
 echo "Configuring VIM with my own dotfiles"
@@ -15,7 +16,7 @@ cd ~/.vim/
 git submodule update --init
 cd ~
 echo "source ~/.vim/vimrc" > ~/.vimrc
-echo "source ~/.vim/vimrc" > ~/.gvimrc
+echo "source ~/.vim/vimrc\ncolorscheme railscasts" > ~/.gvimrc
 
 #Bashrc
 echo "source ~/.dotfiles/bashrc" > ~/.bashrc
