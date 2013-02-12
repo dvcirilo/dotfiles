@@ -111,12 +111,16 @@ export PATH=/usr/local/texlive/2011/bin/i386-linux:$PATH
 #MATLAB
 export PATH=/opt/MATLAB/bin:$PATH
 
+#Xilinx ISE
+source /opt/Xilinx/14.2/ISE_DS/settings32.sh > /dev/null
+
 #RAILS
 #export PATH=/var/lib/gems/1.8/bin:$PATH
 
 #RVM
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-#[[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion" # This adds rvm shell completion
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion" # This adds rvm shell completion
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #GIT
 function git_state {
@@ -165,7 +169,7 @@ function get_author {
 #RVM
 function rvm_info {
   if [ -n "$($HOME/.rvm/bin/rvm-prompt)" ]; then
-    echo "[$($HOME/.rvm/bin/rvm-prompt i v g)]"
+    echo "[$($HOME/.rvm/bin/rvm-prompt i v g)] "
   fi
 }
 
@@ -182,6 +186,5 @@ CYAN="\[\033[0;36m\]"
 LIGHT_CYAN="\[\033[1;36m\]"
 NO_COLOUR="\[\033[0m\]"
 
-#export PS1="$PS1$CYAN\$(rvm_info)$BLUE\$(get_author)$YELLOW\$(parse_git_branch)$RED\$(git_state)$WHITE "
-export PS1="$PS1$BLUE\$(get_author)$YELLOW\$(parse_git_branch)$RED\$(git_state)$WHITE "
-
+export PS1="$PS1$CYAN\$(rvm_info)$BLUE\$(get_author)$YELLOW\$(parse_git_branch)$RED\$(git_state)$WHITE "
+#export PS1="$PS1$BLUE\$(get_author)$YELLOW\$(parse_git_branch)$RED\$(git_state)$WHITE "

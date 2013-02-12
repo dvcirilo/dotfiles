@@ -1,10 +1,14 @@
 [color]
 	ui = true
 [user]
-	name = Diego Vinicius
+	name = Diego Cirilo
 	email = eletronzip@gmail.com
 [alias]
+        pom = push origin master
+        po = push origin
         lol = log --graph --decorate --pretty=oneline --abbrev-commit
         lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
         co = checkout
         s = status
+[core]
+	excludesfile = ~/.dotfiles/gitignore
