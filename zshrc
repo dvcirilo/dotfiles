@@ -43,6 +43,13 @@ alias la="ls -a"
 
 EDITOR=vim
 
-source $HOME/.rvm/scripts/rvm
+if [ -d $HOME/.rvm/bin ]; then
+  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [ -d /opt/Xilinx/14.2/ISE_DS/ISE/bin/lin ]; then
+  PATH=$PATH:/opt/Xilinx/14.2/ISE_DS/ISE/bin/lin # Add ISE to path
+fi
+if [ -d /usr/local/texlive/2011/bin/i386-linux ]; then
+  PATH=$PATH:/usr/local/texlive/2011/bin/i386-linux # Add Latex to path
+fi

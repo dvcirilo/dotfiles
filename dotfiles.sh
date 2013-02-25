@@ -1,34 +1,42 @@
 #!/bin/bash
+source ask.sh
 
 #My face on gnome
-echo "Getting my face from gravatar.com and putting it into .face"
-wget "http://gravatar.com/avatar/4e2372887c285333cf7be7901de22bb3?s=200" -O ~/.face
+ask "Getting my face from gravatar.com and putting it into .face" Y && wget "http://gravatar.com/avatar/4e2372887c285333cf7be7901de22bb3?s=200" -O ~/.face
 
 #ZSH config
-rm -rf ~/.oh-my-zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
-echo "source ~/.dotfiles/zshrc" ~/.zshrc
-cp ~/.dotfiles/halan.zsh-theme ~/.oh-my-zsh/themes/
-chsh -s /bin/zsh
+if ask "Starting to configure oh-my-zsh" Y; then
+  rm -rf ~/.oh-my-zsh
+  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
+  echo "source ~/.dotfiles/zshrc" >  ~/.zshrc
+  cp ~/.dotfiles/halan.zsh-theme ~/.oh-my-zsh/themes/
+  chsh -s /bin/zsh
+fi
 
 #vim config
-echo "Configuring VIM with my own dotfiles"
-rm -rf ~/.vim
-git clone git://github.com/eletronzip/vimfiles.git  ~/.vim
-cd ~/.vim/
-git submodule update --init
-cd ~
-echo "source ~/.vim/vimrc" > ~/.vimrc
-echo "source ~/.vim/vimrc\ncolorscheme railscasts" > ~/.gvimrc
+if ask "Configuring VIM with my own dotfiles" Y; then
+  rm -rf ~/.vim
+  git clone https://github.com/eletronzip/vimfiles.git  ~/.vim
+  cd ~/.vim/
+  git submodule update --init
+  cd ~
+  echo "source ~/.vim/vimrc" > ~/.vimrc
+fi
 
 #Bashrc
-echo "source ~/.dotfiles/bashrc" > ~/.bashrc
-echo "source ~/.dotfiles/bashrc" > ~/.bash_profile
+if ask "Configuring Bashrc" Y; then
+  echo "source ~/.dotfiles/bashrc" > ~/.bashrc
+  echo "source ~/.dotfiles/bashrc" > ~/.bash_profile
+fi
 
 #Gitconfig
-rm -f ~/.gitconfig
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+if ask "Configuring git" Y; then
+  rm -f ~/.gitconfig
+  ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+fi
 
 #Gemrc
-rm -f ~/.gemrc
-ln -s ~/.dotfiles/gemrc ~/.gemrc
+if ask "configuring gemrc" Y; then
+  rm -f ~/.gemrc
+  ln -s ~/.dotfiles/gemrc ~/.gemrc
+fi
