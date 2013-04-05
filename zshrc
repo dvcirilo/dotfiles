@@ -45,6 +45,7 @@ EDITOR=vim
 
 if [ -d $HOME/.rvm/bin ]; then
   PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+  source $HOME/.rvm/scripts/rvm
 fi
 
 if [ -d /opt/Xilinx/14.2/ISE_DS/ISE/bin/lin ]; then
