@@ -1,6 +1,6 @@
 local user="%(!.%{$fg[blue]%}.%{$fg_bold[blue]%})%n%{$reset_color%}"
 local host="@${host_repr[$(hostname)]:-$(hostname)}%{$reset_color%}"
-local time="%{$fg[blue]%}%D{[%I:%M:%S]}%{$reset_color%}"
+local time="%{$fg[blue]%}%D{[%H:%M:%S]}%{$reset_color%}"
 local dir="%{$reset_color%}%{$fg[white]%}[%~]%{$reset_color%}"
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
