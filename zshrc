@@ -54,3 +54,6 @@ fi
 if [ -d /usr/local/texlive/2011/bin/i386-linux ]; then
   PATH=$PATH:/usr/local/texlive/2011/bin/i386-linux # Add Latex to path
 fi
+if [ -d /usr/local/texlive/2012/bin/x86_64-linux ]; then
+  PATH=$PATH:/usr/local/texlive/2012/bin/x86_64-linux # Add Latex to path
+fi
