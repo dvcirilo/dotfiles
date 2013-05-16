@@ -55,9 +55,9 @@ fi
 if [ -d /opt/Xilinx/14.2/ISE_DS/ISE/bin/lin ]; then
   PATH=$PATH:/opt/Xilinx/14.2/ISE_DS/ISE/bin/lin # Add ISE to path
 fi
-if [ -d /usr/local/texlive/2011/bin/i386-linux ]; then
-  PATH=$PATH:/usr/local/texlive/2011/bin/i386-linux # Add Latex to path
-fi
+
+#Path para o texlive! Para fazer o sudo ver o tlmgr, usar:
+#sudo env PATH="$PATH" tlmgr path add
 if [ -d /usr/local/texlive/2012/bin/x86_64-linux ]; then
   PATH=$PATH:/usr/local/texlive/2012/bin/x86_64-linux # Add Latex to path
 fi
