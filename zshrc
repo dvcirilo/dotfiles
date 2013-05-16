@@ -41,6 +41,10 @@ source $ZSH/oh-my-zsh.sh
 alias ll="ls -la"
 alias la="ls -a"
 
+# Garante que a seta pra cima carregue o histórico daquele comando
+bindkey "${terminfo[kcuu1]}" up-line-or-search
+bindkey "${terminfo[kcud1]}" down-line-or-search
+
 EDITOR=vim
 
 if [ -d $HOME/.rvm/bin ]; then
