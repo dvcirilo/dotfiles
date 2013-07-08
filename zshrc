@@ -41,6 +41,10 @@ source $ZSH/oh-my-zsh.sh
 alias ll="ls -la"
 alias la="ls -a"
 
+# Hashes ou aliases para os diretórios sérios.
+hash -d ifrn="/home/diego/Dropbox/ifrn/"
+hash -d mestrado="/home/diego/Dropbox/mestrado/"
+
 # Garante que a seta pra cima carregue o histórico daquele comando
 bindkey "${terminfo[kcuu1]}" up-line-or-search
 bindkey "${terminfo[kcud1]}" down-line-or-search
