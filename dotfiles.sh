@@ -10,7 +10,9 @@ if ask "Starting to configure oh-my-zsh" Y; then
   git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
   echo "source ~/.dotfiles/zshrc" >  ~/.zshrc
   cp ~/.dotfiles/halan.zsh-theme ~/.oh-my-zsh/themes/
-  chsh -s /bin/zsh
+  if [ "$SHELL" != "/bin/zsh" ]; then
+    chsh -s /bin/zsh
+  fi
 fi
 
 #vim config
