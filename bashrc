@@ -106,13 +106,15 @@ fi
 export PATH=/home/diego/scripts:$PATH
 
 #TeX-Live
-export PATH=/usr/local/texlive/2011/bin/i386-linux:$PATH
+#export PATH=/usr/local/texlive/2011/bin/i386-linux:$PATH
 
 #MATLAB
-export PATH=/opt/MATLAB/bin:$PATH
+#export PATH=/opt/MATLAB/bin:$PATH
 
 #Xilinx ISE
-source /opt/Xilinx/14.2/ISE_DS/settings32.sh > /dev/null
+if [ -d /opt/Xilinx/14.6/ISE_DS ]; then
+  source /opt/Xilinx/14.6/ISE_DS/settings64.sh > /dev/null
+fi
 
 #RAILS
 #export PATH=/var/lib/gems/1.8/bin:$PATH

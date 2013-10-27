@@ -56,8 +56,26 @@ if [ -d $HOME/.rvm/bin ]; then
   source $HOME/.rvm/scripts/rvm
 fi
 
-if [ -d /opt/Xilinx/14.2/ISE_DS/ISE/bin/lin ]; then
-  PATH=$PATH:/opt/Xilinx/14.2/ISE_DS/ISE/bin/lin # Add ISE to path
+if [ -d /opt/Xilinx/14.6/ISE_DS ]; then
+  LD_LIBRARY_PATH=/opt/Xilinx/14.6/ISE_DS/ISE/lib/lin64:/opt/Xilinx/14.6/ISE_DS/ISE/smartmodel/lin64/installed_lin64/lib:/opt/Xilinx/14.6/ISE_DS/ISE/sysgen/lib:/opt/Xilinx/14.6/ISE_DS/EDK/lib/lin64:/opt/Xilinx/14.6/ISE_DS/common/lib/lin64
+  XILINX_EDK=/opt/Xilinx/14.6/ISE_DS/EDK
+  PATH=$PATH:/opt/Xilinx/14.6/ISE_DS/ISE/bin/lin64:/opt/Xilinx/14.6/ISE_DS/ISE/sysgen/util:/opt/Xilinx/14.6/ISE_DS/ISE/sysgen/bin:/opt/Xilinx/14.6/ISE_DS/ISE/../../../DocNav:/opt/Xilinx/14.6/ISE_DS/PlanAhead/bin:/opt/Xilinx/14.6/ISE_DS/EDK/bin/lin64:/opt/Xilinx/14.6/ISE_DS/EDK/gnu/microblaze/lin/bin:/opt/Xilinx/14.6/ISE_DS/EDK/gnu/powerpc-eabi/lin/bin:/opt/Xilinx/14.6/ISE_DS/EDK/gnu/arm/lin/bin:/opt/Xilinx/14.6/ISE_DS/EDK/gnu/microblaze/linux_toolchain/lin64_be/bin:/opt/Xilinx/14.6/ISE_DS/EDK/gnu/microblaze/linux_toolchain/lin64_le/bin:/opt/Xilinx/14.6/ISE_DS/common/bin/lin64
+  XILINX_PLANAHEAD=/opt/Xilinx/14.6/ISE_DS/PlanAhead
+  XILINX=/opt/Xilinx/14.6/ISE_DS/ISE
+fi
+
+if [ -d /usr/local/altera/quartus/bin ]; then
+  PATH=$PATH:/usr/local/altera/quartus/bin # Add QuartusII to path
+  export QUARTUS_ROOTDIR="/usr/local/altera/quartus"
+  export QUARTUS_ROOTDIR_OVERRIDE="$QUARTUS_ROOTDIR"
+fi
+
+if [ -d /usr/local/altera/nios2eds/bin ]; then
+  PATH=$PATH:/usr/local/altera/nios2eds/bin # Add NiosII to path
+fi
+
+if [ -d /usr/local/altera/modelsim_ase/bin ]; then
+  PATH=$PATH:/usr/local/altera/modelsim_ase/bin # Add ModelSim to path
 fi
 
 #+++@@###$    Path para o texlive! Para fazer o sudo ver o tlmgr, usar:
