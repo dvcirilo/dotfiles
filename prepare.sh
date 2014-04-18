@@ -1,8 +1,15 @@
 #!/bin/bash
+
 source ask.sh
 
 #Configuring cedilla
-# http://gpupo.com/c-cedilha-no-ubuntu-910-resolvido
+#Add following lines to /etc/environment
+#GTK_IM_MODULE=cedilla
+#QT_IM_MODULE=cedilla
+
+#Nome no dash
+#gsettings set com.canonical.indicator.session show-real-name-on-panel true
+
 
 #basic stuff that I use
 ask "Install git, vim, zsh?" Y && sudo apt-get install git vim-gtk zsh
@@ -30,8 +37,3 @@ ask "Install RVM, to manage Rubies?" Y && \curl -L https://get.rvm.io | bash -s 
 
 #Set dotfiles
 ask "Set my dotfiles?" Y && /bin/bash ~/.dotfiles/dotfiles.sh
-
-#audacious 2.5.x
-#sudo add-apt-repository ppa:nilarimogard/webupd8
-#sudo apt-get update
-#sudo apt-get install audacious
