@@ -14,7 +14,7 @@ ask "Install what's necessary for RVM and Ruby development?" Y && sudo apt-get i
 ask "Install ubuntu-restricted-extras for fonts, flash, etc?" Y && sudo apt-get install ubuntu-restricted-extras
 
 #install the nice Mac font Monaco
-ask "install the nice Mac font Monaco?" Y && curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font.sh | bash
+ask "install the nice Mac font Monaco?" Y && curl -kL https://raw.github.com/cstrap/monaco-font/master/install-font-ubuntu.sh | bash
 
 #necessary for vimfiles.
 ask "Install exuberant-ctags and ncurses-term for nice vim usage?" Y && sudo apt-get install exuberant-ctags ncurses-term
