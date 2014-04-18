@@ -81,6 +81,6 @@ fi
 
 #+++@@###$    Path para o texlive! Para fazer o sudo ver o tlmgr, usar:
 #                 sudo env PATH="$PATH" tlmgr path add
-if [ -d /usr/local/texlive/2013/bin/x86_64-linux ]; then
-  PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux # Add Latex to path
+if [ -d $HOME/.texlive/2013/bin/x86_64-linux ]; then
+  PATH=$PATH:$HOME/.texlive/2013/bin/x86_64-linux # Add Latex to path
 fi
