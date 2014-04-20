@@ -112,9 +112,9 @@ export PATH=/home/diego/scripts:$PATH
 #export PATH=/opt/MATLAB/bin:$PATH
 
 #Xilinx ISE
-if [ -d /opt/Xilinx/14.6/ISE_DS ]; then
-  source /opt/Xilinx/14.6/ISE_DS/settings64.sh > /dev/null
-fi
+#if [ -d /opt/Xilinx/14.6/ISE_DS ]; then
+  #source /opt/Xilinx/14.6/ISE_DS/settings64.sh > /dev/null
+#fi
 
 #RAILS
 #export PATH=/var/lib/gems/1.8/bin:$PATH
