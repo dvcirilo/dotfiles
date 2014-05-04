@@ -44,6 +44,8 @@ alias la="ls -a"
 # Hashes ou aliases para os diretórios sérios.
 hash -d ifrn="/home/diego/Dropbox/ifrn/"
 hash -d mestrado="/home/diego/Dropbox/mestrado/"
+hash -d downloads="/home/diego/Downloads/"
+hash -d desktop="/home/diego/Desktop/"
 
 # Garante que a seta pra cima carregue o histórico daquele comando
 bindkey "${terminfo[kcuu1]}" up-line-or-search
