@@ -35,5 +35,13 @@ ask "Install LAMP, for php development?" Y && sudo apt-get install apache2 libap
 #RVM
 ask "Install RVM, to manage Rubies?" Y && \curl -L https://get.rvm.io | bash -s stable --ruby
 
+#Silence
+if ask "Silence Ubuntu Greeter?" Y; then
+  sudo sh -c "echo '[com.canonical.unity-greeter]' >> /usr/share/glib-2.0/schemas/50_unity-greeter.gschema.override; echo 'play-ready-sound = false' >> /usr/share/glib-2.0/schemas/50_unity-greeter.gschema.override"
+  sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
+fi
+#Swap Ctrl and Caps Lock
+ask "Swap Ctrl and Caps Lock?" Y && gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
+
 #Set dotfiles
 ask "Set my dotfiles?" Y && /bin/bash ~/.dotfiles/dotfiles.sh
