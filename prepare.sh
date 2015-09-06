@@ -40,8 +40,23 @@ if ask "Silence Ubuntu Greeter?" Y; then
   sudo sh -c "echo '[com.canonical.unity-greeter]' >> /usr/share/glib-2.0/schemas/50_unity-greeter.gschema.override; echo 'play-ready-sound = false' >> /usr/share/glib-2.0/schemas/50_unity-greeter.gschema.override"
   sudo glib-compile-schemas /usr/share/glib-2.0/schemas/
 fi
+
 #Swap Ctrl and Caps Lock
 ask "Swap Ctrl and Caps Lock?" Y && gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
+
+#PSensor
+if ask "Install Psensor indicator (PPA version)" Y; then
+  sudo apt-add-repository ppa:jfi/ppa
+  sudo apt-get update
+  sudo apt-get install psensor
+fi
+
+#PSensor
+if ask "Install indicator-multiload (PPA version)" Y; then
+  sudo apt-add-repository ppa:indicator-multiload/stable-daily
+  sudo apt-get update
+  sudo apt-get install indicator-multiload
+fi
 
 #Set dotfiles
 ask "Set my dotfiles?" Y && /bin/bash ~/.dotfiles/dotfiles.sh
