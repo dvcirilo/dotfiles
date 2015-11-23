@@ -58,5 +58,10 @@ if ask "Install indicator-multiload (PPA version)" Y; then
   sudo apt-get install indicator-multiload
 fi
 
+#Java
+if ask "Install IcedTea plugin(Java)" Y; then
+  sudo apt-get install icedtea-plugin
+fi
+
 #Set dotfiles
 ask "Set my dotfiles?" Y && /bin/bash ~/.dotfiles/dotfiles.sh
