@@ -27,10 +27,13 @@ ask "install the nice Mac font Monaco?" Y && curl -kL https://raw.github.com/cst
 ask "Install exuberant-ctags and ncurses-term for nice vim usage?" Y && sudo apt-get install exuberant-ctags ncurses-term
 
 #necessary for mysql db
-ask "Install what's necessary for MySQL?" Y && sudo apt-get install libmysqlclient-dev mysql-server mysql-client mysql-common mysql-admin
+ask "Install what's necessary for MySQL?" Y && sudo apt-get install mysql-server && mysql_install_db && mysql_secure_installation
 
 #LAMP
 ask "Install LAMP, for php development?" Y && sudo apt-get install apache2 libapache2-mod-php5 libapache2-mod-auth-mysql php5-mysql
+
+#LEMP
+ask "Install LEMP, for php development?" Y && sudo apt-get install nginx php5-fpm php5-mysql 
 
 #RVM
 ask "Install RVM, to manage Rubies?" Y && \curl -L https://get.rvm.io | bash -s stable --ruby

@@ -42,6 +42,7 @@ alias ll="ls -la"
 alias la="ls -a"
 
 # Hashes ou aliases para os diretórios sérios.
+setopt cdablevars
 hash -d ifrn="/home/diego/Dropbox/ifrn/"
 hash -d mestrado="/home/diego/Dropbox/mestrado/"
 hash -d downloads="/home/diego/Downloads/"
