@@ -122,7 +122,9 @@ export PATH=/home/diego/scripts:$PATH
 #RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -r "$HOME/.rvm/scripts/completion" ]] && . "$HOME/.rvm/scripts/completion" # This adds rvm shell completion
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [ -d "$HOME/.rvm/bin" ]; then
+  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+fi
 
 #GIT
 function git_state {
@@ -170,7 +172,7 @@ function get_author {
 
 #RVM
 function rvm_info {
-  if [ -n "$($HOME/.rvm/bin/rvm-prompt)" ]; then
+  if [ -f "$HOME/.rvm/bin/rvm-prompt" ]; then
     echo "[$($HOME/.rvm/bin/rvm-prompt i v g)] "
   fi
 }
