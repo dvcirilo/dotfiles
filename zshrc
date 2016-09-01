@@ -32,7 +32,7 @@ CASE_SENSITIVE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm)
+plugins=(git rbenv nodenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,11 +53,6 @@ bindkey "${terminfo[kcuu1]}" up-line-or-search
 bindkey "${terminfo[kcud1]}" down-line-or-search
 
 EDITOR=vim
-
-if [ -d $HOME/.rvm/bin ]; then
-  PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-  source $HOME/.rvm/scripts/rvm
-fi
 
 if [ -d /opt/Xilinx/14.6/ISE_DS ]; then
   # Quebra várias coisas, inclusive o autocomplete do apt-get. Só usar se sentir falta...
