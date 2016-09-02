@@ -83,3 +83,5 @@ fi
 if [ -d /usr/local/texlive/2016/bin/x86_64-linux ]; then
   PATH=$PATH:/usr/local/texlive/2016/bin/x86_64-linux # Add Latex to path
 fi
+#export PATH="$HOME/.nodenv/bin:$PATH"
+#eval "$(nodenv init -)"

@@ -9,7 +9,10 @@ if ask "Starting to configure oh-my-zsh" Y; then
   rm -rf ~/.oh-my-zsh
   git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
   echo "source ~/.dotfiles/zshrc" >  ~/.zshrc
-  cp ~/.dotfiles/halan.zsh-theme ~/.oh-my-zsh/themes/
+  mkdir ~/.oh-my-zsh/custom/themes
+  mkdir ~/.oh-my-zsh/custom/plugins/nodenv
+  cp ~/.dotfiles/halan.zsh-theme ~/.oh-my-zsh/custom/themes/
+  cp ~/.dotfiles/nodenv.plugin.zsh ~/.oh-my-zsh/custom/plugins/nodenv
   if [ "$SHELL" != "/bin/zsh" ]; then
     chsh -s /bin/zsh
   fi
