@@ -10,6 +10,9 @@ source ask.sh
 #Nome no dash
 #gsettings set com.canonical.indicator.session show-real-name-on-panel true
 
+#volume on mouse side buttons
+#https://matmunn.me/post/binding-volume-control-mouse-buttons-ubuntu/
+
 
 #basic stuff that I use
 ask "Install git, vim, zsh?" Y && sudo apt-get install git vim-gtk zsh
