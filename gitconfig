@@ -2,7 +2,7 @@
 	ui = true
 [user]
 	name = Diego Cirilo
-	email = eletronzip@gmail.com
+	email = dvcirilo@gmail.com
 [alias]
         pom = push origin master
         po = push origin
