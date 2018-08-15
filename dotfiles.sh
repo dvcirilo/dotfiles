@@ -21,7 +21,7 @@ fi
 #vim config
 if ask "Configuring VIM with my own dotfiles" Y; then
   rm -rf ~/.vim
-  git clone https://github.com/dvcirilo/vimfiles.git  ~/.vim
+  git clone https://gitlab.com/dvcirilo/vimfiles.git  ~/.vim
   cd ~/.vim/
   git submodule update --init
   cd ~
