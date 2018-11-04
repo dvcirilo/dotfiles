@@ -74,8 +74,8 @@ if [ -d /usr/local/altera/nios2eds/bin ]; then
   PATH=$PATH:/usr/local/altera/nios2eds/bin # Add NiosII to path
 fi
 
-if [ -d /usr/local/altera/modelsim_ase/bin ]; then
-  PATH=$PATH:/usr/local/altera/modelsim_ase/bin # Add ModelSim to path
+if [ -d /home/diego/.intelFPGA/18.1/modelsim_ase/bin ]; then
+  PATH=$PATH:/home/diego/.intelFPGA/18.1/modelsim_ase/bin # Add ModelSim to path
 fi
 
 #+++@@###$    Path para o texlive! Para fazer o sudo ver o tlmgr, usar:

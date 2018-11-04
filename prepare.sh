@@ -13,6 +13,8 @@ source ask.sh
 #volume on mouse side buttons
 #https://matmunn.me/post/binding-volume-control-mouse-buttons-ubuntu/
 
+# Nvidia lagginess https://ubuntuforums.org/showthread.php?t=2374405
+
 
 #basic stuff that I use
 ask "Install git, vim, zsh?" Y && sudo apt install git vim-gtk zsh
