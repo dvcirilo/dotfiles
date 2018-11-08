@@ -146,14 +146,14 @@ function git_state {
             then
                 GIT_STATE=$GIT_STATE'+U' # Working tree has untracked files
             fi
+            echo -e "\033[0;33m[$(parse_git_branch)\033[1;31m${GIT_STATE}\033[0;33m]\033[0m"
         fi
-        echo "${GIT_STATE}"
     fi
 }
 
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-echo "("${ref#refs/heads/}")"
+echo ${ref#refs/heads/}
 }
 
 # Colors
@@ -169,4 +169,4 @@ CYAN="\[\033[0;36m\]"
 LIGHT_CYAN="\[\033[1;36m\]"
 NO_COLOUR="\[\033[0m\]"
 
-export PS1="$PS1$YELLOW\$(parse_git_branch)$RED\$(git_state)$CYAN\$$NO_COLOUR "
+export PS1="$PS1\$(git_state)$CYAN\$$NO_COLOUR "
