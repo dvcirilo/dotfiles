@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]'
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u@\[\033[1;31m\]\h\[\033[00m\]:\w\[\033[00m\]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -156,7 +156,7 @@ function parse_git_branch {
 echo "("${ref#refs/heads/}")"
 }
 
-#VISUALIZACAO
+# Colors
 
 GREEN="\[\033[01;32m\]"
 BLUE="\[\033[01;34m\]"
@@ -169,4 +169,4 @@ CYAN="\[\033[0;36m\]"
 LIGHT_CYAN="\[\033[1;36m\]"
 NO_COLOUR="\[\033[0m\]"
 
-export PS1="$PS1$YELLOW\$(parse_git_branch)$RED\$(git_state)$WHITE\$ "
+export PS1="$PS1$YELLOW\$(parse_git_branch)$RED\$(git_state)$CYAN\$$NO_COLOUR "
