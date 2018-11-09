@@ -7,9 +7,6 @@ source ask.sh
 #GTK_IM_MODULE=cedilla
 #QT_IM_MODULE=cedilla
 
-#Nome no dash
-#gsettings set com.canonical.indicator.session show-real-name-on-panel true
-
 #volume on mouse side buttons
 #https://matmunn.me/post/binding-volume-control-mouse-buttons-ubuntu/
 
@@ -23,25 +20,16 @@ ask "Install git, vim, zsh?" Y && sudo apt install git vim-gtk zsh
 #ask "Install what's necessary for RVM and Ruby development?" Y && sudo apt install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison curl ruby ruby-dev
 
 #necessary for almost anything
-ask "Install ubuntu-restricted-extras for fonts, flash, etc?" Y && sudo apt install ubuntu-restricted-extras
+ask "Install ubuntu-restricted-extras for fonts, etc?" Y && sudo apt install ubuntu-restricted-extras
+
+#flashplayer
+ask "Install flash plugin?" Y && sudo apt install flashplugin-installer
 
 #install the nice Mac font Monaco
 ask "install the nice Mac font Monaco?" Y && sudo mkdir -p /usr/share/fonts/truetype/custom/ && sudo cp Monaco_Linux.ttf /usr/share/fonts/truetype/custom/ && sudo fc-cache -f -v
 
 #necessary for vimfiles.
 ask "Install exuberant-ctags and ncurses-term for nice vim usage?" Y && sudo apt install exuberant-ctags ncurses-term
-
-#necessary for mysql db
-#ask "Install what's necessary for MySQL?" Y && sudo apt install mysql-server && mysql_install_db && mysql_secure_installation
-
-#LAMP
-#ask "Install LAMP, for php development?" Y && sudo apt install apache2 libapache2-mod-php5 libapache2-mod-auth-mysql php5-mysql
-
-#LEMP
-#ask "Install LEMP, for php development?" Y && sudo apt install nginx php5-fpm php5-mysql 
-
-#RVM
-#ask "Install RVM, to manage Rubies?" Y && \curl -L https://get.rvm.io | bash -s stable --ruby
 
 #Silence
 if ask "Silence Ubuntu Greeter?" Y; then
@@ -50,7 +38,7 @@ if ask "Silence Ubuntu Greeter?" Y; then
 fi
 
 #Swap Ctrl and Caps Lock
-ask "Swap Ctrl and Caps Lock?" Y && gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
+ask "Swap Ctrl and Caps Lock? (works on gnome)" Y && gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
 
 #Java
 if ask "Install IcedTea plugin(Java)" Y; then

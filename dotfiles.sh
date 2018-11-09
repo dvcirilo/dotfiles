@@ -10,9 +10,7 @@ if ask "Starting to configure oh-my-zsh" Y; then
   git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 
   echo "source ~/.dotfiles/zshrc" >  ~/.zshrc
   mkdir ~/.oh-my-zsh/custom/themes
-  mkdir ~/.oh-my-zsh/custom/plugins/nodenv
-  cp ~/.dotfiles/halan.zsh-theme ~/.oh-my-zsh/custom/themes/
-  cp ~/.dotfiles/nodenv.plugin.zsh ~/.oh-my-zsh/custom/plugins/nodenv
+  cp ~/.dotfiles/dvcirilo.zsh-theme ~/.oh-my-zsh/custom/themes/
   if [ "$SHELL" != "/bin/zsh" ]; then
     chsh -s /bin/zsh
   fi
@@ -21,9 +19,9 @@ fi
 #vim config
 if ask "Configuring VIM with my own dotfiles" Y; then
   rm -rf ~/.vim
-  git clone https://gitlab.com/dvcirilo/vimfiles.git  ~/.vim
+  git clone https://github.com/dvcirilo/vimfiles.git  ~/.vim
   cd ~/.vim/
-  git submodule update --init
+  git submodule update --init --recursive
   cd ~
   echo "source ~/.vim/vimrc" > ~/.vimrc
 fi
@@ -31,17 +29,10 @@ fi
 #Bashrc
 if ask "Configuring Bashrc" Y; then
   echo "source ~/.dotfiles/bashrc" > ~/.bashrc
-  echo "source ~/.dotfiles/bashrc" > ~/.bash_profile
 fi
 
 #Gitconfig
 if ask "Configuring git" Y; then
   rm -f ~/.gitconfig
   ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-fi
-
-#Gemrc
-if ask "configuring gemrc" Y; then
-  rm -f ~/.gemrc
-  ln -s ~/.dotfiles/gemrc ~/.gemrc
 fi
