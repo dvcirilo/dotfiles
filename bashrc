@@ -169,4 +169,4 @@ CYAN="\[\033[0;36m\]"
 LIGHT_CYAN="\[\033[1;36m\]"
 NO_COLOUR="\[\033[0m\]"
 
-export PS1="$PS1\$(git_state)$CYAN\$$NO_COLOUR "
+export PS1="$PS1\$(git_state)\n$CYAN\$$NO_COLOUR "
