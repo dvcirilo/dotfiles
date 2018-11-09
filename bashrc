@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u@\[\033[1;31m\]\h\[\033[00m\]:[\w\[\033[00m\]]'
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u@\[\033[1;31m\]\h\[\033[00m\] [\w\[\033[00m\]]'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -130,25 +130,11 @@ function git_state {
         fi
         if [[ "$STATUS" == *'working directory clean'* ]]
         then
-            GIT_STATE=""
+            GIT_STATE=" \033[01;32m✓\033[0m"
         else
-            GIT_HEAD=$GIT_HEAD":"
-            GIT_STATE=""
-            if [[ "$STATUS" == *'Changes to be committed:'* ]]
-            then
-                GIT_STATE=$GIT_STATE'+I' # Index has files staged for commit
-            fi
-            if [[ "$STATUS" == *'Changed but not updated:'* || "$STATUS" == *'Changes not staged for commit'* ]]
-            then
-                GIT_STATE=$GIT_STATE"+M" # Working tree has files modified but unstaged
-            fi
-            if [[ "$STATUS" == *'Untracked files:'* ]]
-            then
-                GIT_STATE=$GIT_STATE'+U' # Working tree has untracked files
-            fi
-            GIT_STATE="\033[0;33m[$(parse_git_branch)\033[1;31m${GIT_STATE}\033[0;33m]\033[0m"
+            GIT_STATE="\033[1;31m ✗\033[0m" # Index has files staged for commit
         fi
-        echo -e $GIT_STATE
+        echo -e "\033[0;33m[$(parse_git_branch)\033[1;31m${GIT_STATE}\033[0;33m]\033[0m"
     fi
 }
 
@@ -170,4 +156,4 @@ CYAN="\[\033[0;36m\]"
 LIGHT_CYAN="\[\033[1;36m\]"
 NO_COLOUR="\[\033[0m\]"
 
-export PS1="$PS1\$(git_state)\n$CYAN\$$NO_COLOUR "
+export PS1="╭─ $PS1 \$(git_state)\n╰─>$CYAN \$$NO_COLOUR "
