@@ -13,3 +13,5 @@
         s = status
 [core]
 	excludesfile = ~/.dotfiles/gitignore
+[credential]
+	helper = cache --timeout=3600
