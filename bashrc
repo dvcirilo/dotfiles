@@ -146,8 +146,9 @@ function git_state {
             then
                 GIT_STATE=$GIT_STATE'+U' # Working tree has untracked files
             fi
-            echo -e "\033[0;33m[$(parse_git_branch)\033[1;31m${GIT_STATE}\033[0;33m]\033[0m"
+            GIT_STATE="\033[0;33m[$(parse_git_branch)\033[1;31m${GIT_STATE}\033[0;33m]\033[0m"
         fi
+        echo -e $GIT_STATE
     fi
 }
 
