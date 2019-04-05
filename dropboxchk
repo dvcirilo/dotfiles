@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import subprocess
+my_out = subprocess.Popen(["/home/diego/.dropbox-dist/dropbox", "status"],
+                          stdout=subprocess.PIPE,
+                          stderr=subprocess.STDOUT)
+
+message = my_out.communicate()[0].decode("utf-8")
+
+if "Syncing" in message:
+    print("⟲ ")
+elif "Up to date" in message:
+    print("⇌ ")
+else:
+    print("⚠ ")
