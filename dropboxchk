@@ -9,7 +9,11 @@ message = my_out.communicate()[0].decode("utf-8")
 
 if "Syncing" in message:
     print("⟲ ")
+elif "Sincronizando" in message:
+    print("⟲ ")
 elif "Up to date" in message:
+    print("⇌ ")
+elif "Atualizado" in message:
     print("⇌ ")
 else:
     print("⚠ ")
