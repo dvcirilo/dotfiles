@@ -257,3 +257,5 @@ bind C-a send-prefix
 
 # move status line to top
 set -g status-position top
+
+set-option -g update-environment "SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"
