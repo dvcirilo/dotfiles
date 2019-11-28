@@ -37,7 +37,8 @@ alias la="ls -a"
 # Hashes to most used dirs.
 setopt cdablevars
 hash -d ifrn="$HOME/Dropbox/ifrn/"
-hash -d doutorado="$HOME/Dropbox/doutorado/"
+hash -d phd="$HOME/Dropbox/phd/"
+hash -d doutorado="$HOME/Dropbox/phd/"
 
 # Search history of typed command with up/down keys
 bindkey "${terminfo[kcuu1]}" up-line-or-search
