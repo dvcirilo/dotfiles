@@ -30,3 +30,11 @@ altera(){
     fi
 }
 
+
+# Set Mentor Questa
+questa(){
+    if [ -d /usr/local/questasim/ ]; then
+        export LM_LICENSE_FILE=/usr/local/questasim/license.dat
+        PATH=$PATH:/usr/local/questasim/linux_x86_64/
+    fi
+}
