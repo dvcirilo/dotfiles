@@ -1,34 +1,46 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# My dotfiles folder
+DOTFILES=$HOME/.dotfiles
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="dvcirilo"
+# History
+source $DOTFILES/zsh/history.zsh
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
 
+# Completion
+source $DOTFILES/zsh/completion.zsh
+
+# Changing/making/removing directory
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+
+# Colors to the prompt
+autoload -U colors && colors
+
+# Enable ls colors
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+
+# For GNU ls, we use the default ls color theme. They can later be overwritten by themes.
+if [[ -z "$LS_COLORS" ]]; then
+  (( $+commands[dircolors] )) && eval "$(dircolors -b)"
+fi
+
+ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/null && alias ls='ls -G' }
+
+# Take advantage of $LS_COLORS for completion as well.
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# source shrink_path
+source $DOTFILES/zsh/shrink_path.zsh
+
+# Load prompt
+setopt prompt_subst
+source $DOTFILES/zsh/zsh-prompt
+
+
 # Defining text editor 
 export EDITOR=vim
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# As said
- DISABLE_AUTO_TITLE="true"
-
-# Uncomment to change how many often would you like to wait
-# before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-#
-# Which plugins would you like to load?
-# (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vi-mode shrink-path)
-
-# Sourcing oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias ll="ls -la"
@@ -38,20 +50,13 @@ alias la="ls -a"
 setopt cdablevars
 hash -d ifrn="$HOME/Dropbox/ifrn/"
 hash -d phd="$HOME/Dropbox/phd/"
-hash -d doutorado="$HOME/Dropbox/phd/"
 
 # Search history of typed command with up/down keys
 bindkey "${terminfo[kcuu1]}" up-line-or-search
 bindkey "${terminfo[kcud1]}" down-line-or-search
 
 # Source EDA env functions
-source $HOME/.dotfiles/eda_envs.sh
-
-# To pass env to sudo when running tlmgr do:
-# sudo env PATH="$PATH" tlmgr path add
-
-# To invoke root shell keeping env
-# sudo -sE
+source $DOTFILES/zsh/eda_envs.sh
 
 # Add texlive to path if it exists
 if [ -d /usr/local/texlive/2019/bin/x86_64-linux ]; then

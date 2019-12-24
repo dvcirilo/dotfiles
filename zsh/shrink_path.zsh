@@ -12,8 +12,8 @@ shrink_path ()
     end="${end#/}" # Strip the first /
     shortenedpath="$end"
 
-    shopt -q nullglob && NGV="-s" || NGV="-u" # Tests if set
-    shopt -s nullglob
+    #shopt -q nullglob && NGV="-s" || NGV="-u" # Tests if set
+    setopt nullglob #
 
     while [[ "$end" ]]
     do
@@ -45,5 +45,6 @@ shrink_path ()
     [[ ! "$shortenedpath" =~ ^"~" ]] && printf "/$shortenedpath" # Make sure it starts with /
     [[ "$shortenedpath" =~ ^"~" ]] && printf "$shortenedpath" # Don't use / for home dir
 
-    shopt "$NGV" nullglob # Reset nullglob in case this is being used as a function.
+    #shopt "$NGV" nullglob # Reset nullglob in case this is being used as a function.
+    unsetopt nullglob
 }
