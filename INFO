@@ -1,0 +1,17 @@
+# To pass env to sudo when running tlmgr do:
+# sudo env PATH="$PATH" tlmgr path add
+
+# To invoke root shell keeping env
+# sudo -sE
+
+#Configuring cedilla
+#Add following lines to /etc/environment
+#GTK_IM_MODULE=cedilla
+#QT_IM_MODULE=cedilla
+
+#volume on mouse side buttons
+#https://matmunn.me/post/binding-volume-control-mouse-buttons-ubuntu/
+
+# Nvidia lagginess https://ubuntuforums.org/showthread.php?t=2374405
+
+
