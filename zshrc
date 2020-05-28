@@ -8,6 +8,7 @@ source $DOTFILES/zsh/history.zsh
 CASE_SENSITIVE="true"
 
 # Completion
+autoload -U compinit && compinit
 source $DOTFILES/zsh/completion.zsh
 
 # Changing/making/removing directory
