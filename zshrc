@@ -63,3 +63,8 @@ source $DOTFILES/zsh/eda_envs.sh
 if [ -d /usr/local/texlive/2019/bin/x86_64-linux ]; then
     PATH=$PATH:/usr/local/texlive/2019/bin/x86_64-linux # Add Latex to path
 fi
+
+# Add App to path if it exists
+if [ -d $HOME/App/ ]; then
+    PATH=$PATH:$HOME/App/ # Add App to path
+fi
