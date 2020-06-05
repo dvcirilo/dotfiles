@@ -15,7 +15,10 @@ ask "Install ubuntu-restricted-extras for fonts, etc?" Y && sudo apt install ubu
 ask "Install flash plugin?" Y && sudo apt install flashplugin-installer
 
 #install the nice Mac font Monaco
-ask "install the nice Mac font Monaco?" Y && sudo mkdir -p /usr/share/fonts/truetype/custom/ && sudo cp Monaco_Linux.ttf /usr/share/fonts/truetype/custom/ && sudo fc-cache -f -v
+ask "install the nice Mac font Monaco?" Y && sudo mkdir -p /usr/share/fonts/truetype/custom/ && sudo cp $DOTFILES/Monaco_for_Powerline.ttf /usr/share/fonts/truetype/custom/ && sudo fc-cache -f -v
+
+# Set Monaco as the monospace font
+ask "Set Monaco as the monospace font?" Y && mkdir -p $HOME/.config/fontconfig && cat $DOTFILES/fonts.conf >> $HOME/.config/fontconfig/fonts.conf && fc-cache -f -v
 
 #necessary for vimfiles.
 ask "Install exuberant-ctags and ncurses-term for nice vim usage?" Y && sudo apt install exuberant-ctags ncurses-term
