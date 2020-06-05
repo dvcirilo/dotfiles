@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DOTFILES=$HOME/.dotfiles
+
 source ask.sh
 
 #basic stuff that I use
