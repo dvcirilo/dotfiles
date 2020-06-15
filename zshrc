@@ -22,12 +22,14 @@ autoload -U colors && colors
 # Enable ls colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
-# For GNU ls, we use the default ls color theme. They can later be overwritten by themes.
+# For GNU ls, we use the default ls color theme. They can later be
+# overwritten by themes.
 if [[ -z "$LS_COLORS" ]]; then
   (( $+commands[dircolors] )) && eval "$(dircolors -b)"
 fi
 
-ls --color -d . &>/dev/null && alias ls='ls --color=tty' || { ls -G . &>/dev/null && alias ls='ls -G' }
+ls --color -d . &>/dev/null && alias ls='ls --color=tty' \
+    || { ls -G . &>/dev/null && alias ls='ls -G' }
 
 # Take advantage of $LS_COLORS for completion as well.
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -38,7 +40,6 @@ source $DOTFILES/zsh/shrink_path.zsh
 # Load prompt
 setopt prompt_subst
 source $DOTFILES/zsh/zsh-prompt
-
 
 # Defining text editor 
 export EDITOR=vim
