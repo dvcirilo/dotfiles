@@ -1,8 +1,14 @@
 # My dotfiles folder
 DOTFILES=$HOME/.dotfiles
 
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+
 # History
 source $DOTFILES/zsh/history.zsh
+
+# Keybinding defaults
+source $DOTFILES/zsh/keycodes.zsh
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
@@ -56,6 +62,20 @@ hash -d phd="$HOME/Dropbox/phd/"
 # Search history of typed command with up/down keys
 bindkey "${terminfo[kcuu1]}" up-line-or-search
 bindkey "${terminfo[kcud1]}" down-line-or-search
+
+
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+
+bindkey -s '^o' 'lfcd\n'
 
 # Source EDA env functions
 source $DOTFILES/zsh/eda_envs.sh
